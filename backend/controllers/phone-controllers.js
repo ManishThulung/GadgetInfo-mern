@@ -29,6 +29,12 @@ const getAllPhone = catchAsyncError(async (req, res, next) => {
 
   const phones = await apiFeature.query;
 
+  if (!phones) {
+    return next(
+      new ErrorHandler("Phone not foune. Please enter a valid phone name", 404)
+    );
+  }
+
   res.status(200).json({
     success: true,
     phones,

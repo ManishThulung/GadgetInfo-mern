@@ -44,11 +44,10 @@ export const getPhones =
       const { data } = await axios.get(link);
 
       dispatch({
-        type: FETCH_ALL_PHONES,
+        type: FETCH_ALL,
         payload: data,
       });
     } catch (error) {
-      console.log(error);
       dispatch({
         type: FETCH_FAIL,
         payload: error.response.data.message,

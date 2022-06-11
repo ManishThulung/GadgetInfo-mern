@@ -2,9 +2,9 @@ import React, { useState, Fragment } from "react";
 import "./Search.css";
 import { useNavigate } from "react-router-dom";
 import MetaData from "../layout/Metadata";
-
+import { useAlert } from "react-alert";
 import { useEffect } from "react";
-import { getPhones } from "../../redux/actions/phoneAction";
+import { clearErrors, getPhones } from "../../redux/actions/phoneAction";
 import { useSelector, useDispatch } from "react-redux";
 import "../phones/AllPhones.css";
 import Loader from "../loader/Loader";
@@ -15,6 +15,7 @@ const category = ["trending", "gaming", "upcoming"];
 // const ram = ["4GB", "6GB", "8GB", "12GB", "16GB"];
 
 const Search = () => {
+  const alert = useAlert();
   const navigate = useNavigate();
   const [keyword, setKeyword] = useState("");
   const [price, setPrice] = useState([10000, 250000]);
@@ -31,7 +32,7 @@ const Search = () => {
 
   const dispatch = useDispatch();
 
-  const { phones, isLoading } = useSelector((state) => state.phones);
+  const { phones, isLoading, error } = useSelector((state) => state.phones);
 
   let phoneCompany = [];
   phones && phones.map((phone) => phoneCompany.push(phone.company));
@@ -40,7 +41,11 @@ const Search = () => {
   useEffect(() => {
     // dispatch(getAllPhones());
     dispatch(getPhones(searchKeyword, price, categoryItem));
-  }, [dispatch, searchKeyword, price, categoryItem]);
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+  }, [dispatch, alert, error, searchKeyword, price, categoryItem]);
 
   if (isLoading) {
     <Loader />;
@@ -108,6 +113,12 @@ const Search = () => {
                   <PhoneCard phone={phone} width={1} />
                 </div>
               ))}
+            {phones.length <= 0 && (
+              <div style={{ font: "300 1.7vmax Cursive" }}>
+                {`${searchKeyword}`} phone not found. Please enter a valid phone
+                name.
+              </div>
+            )}
           </div>
         </div>
       </div>
