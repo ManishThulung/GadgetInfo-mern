@@ -27,6 +27,9 @@ function Compare() {
   const [suggestions, setSuggestions] = useState([]);
   const [secondSuggestions, setSecondSuggestions] = useState([]);
 
+  // console.log(phones);
+  // console.log(allPhones);
+
   const onSuggestHandler = (name) => {
     setPhoneOne(name);
     setSuggestions([]);

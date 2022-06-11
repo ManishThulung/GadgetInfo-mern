@@ -102,6 +102,9 @@ const Search = () => {
         </div>
 
         <div className="container">
+          {/* {isLoading ? (
+            <Loader />
+          ) : ( */}
           <div className="row d-flex justify-content-center my-4">
             {phones &&
               phones.map((phone) => (
@@ -120,6 +123,7 @@ const Search = () => {
               </div>
             )}
           </div>
+          {/* )} */}
         </div>
       </div>
     </Fragment>
