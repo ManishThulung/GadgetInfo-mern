@@ -63,7 +63,7 @@ export const getAllPhones = () => async (dispatch) => {
     const { data } = await axios.get(link);
 
     dispatch({
-      type: FETCH_ALL,
+      type: FETCH_ALL_PHONES,
       payload: data,
     });
   } catch (error) {
