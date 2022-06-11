@@ -108,7 +108,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(8000, () => {
+    app.listen(process.env.PORT, () => {
       console.log("connected to database");
     });
   })
