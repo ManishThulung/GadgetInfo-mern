@@ -1,0 +1,80 @@
+.main {
+  background-image: url("../logo/bg.jpg");
+  /* height: 91vh; */
+}
+.heading {
+  /* height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-top: 1.8rem;
+}
+.heading h1 {
+  /* justify-content: center; */
+  font-family: "Baloo Bhaijaan 2", cursive;
+  color: rgb(0, 0, 0);
+}
+.para {
+  font-family: "Baloo Bhaijaan 2", cursive;
+  color: rgb(0, 0, 0);
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2.6rem;
+}
+
+form input,
+textarea {
+  display: block;
+  border: none;
+  width: 70%;
+  padding: 4px 7px;
+  border-radius: 9px;
+  outline: none;
+  margin: 6px 0px;
+}
+
+.btns {
+  padding: 6px 11px;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 9px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 12px;
+  border: black;
+  /* box-shadow: rgb(38, 38, 66, 0.3) 10px 20px 130px -30px; */
+}
+.contact {
+  /* padding-top: 100px; */
+  display: grid;
+  grid-template-columns: 7rem 2fr 1fr 7rem;
+}
+form {
+  grid-column: 2/3;
+}
+.info {
+  font-family: "Baloo Bhaijaan 2", cursive;
+  grid-column: 3/4;
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+  margin-top: 20vh;
+}
+.addContact div {
+  margin: 20px;
+}
+.addContact div i {
+  padding-right: 13px;
+}
+.Hicons {
+  margin-top: 20px;
+  padding-left: 12px;
+}
+.Hicons i {
+  padding: 8px 10px;
+}

@@ -1,0 +1,44 @@
+.carousel-item img {
+  height: 85vh;
+  width: 100vw;
+}
+.topic {
+  /* margin: 30px 0px; */
+  margin-top: 50px;
+  /* display: block; */
+  font-size: larger;
+}
+.category {
+  flex-direction: column;
+}
+
+.seeMore {
+  width: 13rem;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.more {
+  width: 7rem;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.more p {
+  padding-top: 1vmax;
+}
+
+.more:hover {
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .seeMore {
+    margin-top: 6vmax;
+  }
+}

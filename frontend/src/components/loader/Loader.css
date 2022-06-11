@@ -1,0 +1,24 @@
+.loading {
+  width: 100vw;
+  height: 93vh;
+  background: white;
+  display: grid;
+  place-items: center;
+  /* max-width: 100%; */
+}
+
+.loading > div {
+  width: 10vmax;
+  height: 10vmax;
+  /* background: tomato; */
+  border-bottom: 5px solid rgb(110, 110, 110);
+  border-radius: 51%;
+
+  animation: loadingRotate 800ms linear infinite;
+}
+
+@keyframes loadingRotate {
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
