@@ -11,7 +11,7 @@ import Loader from "../loader/Loader";
 import PhoneCard from "../phones/PhoneCard";
 import { Slider, Typography } from "@mui/material";
 
-const category = ["trending", "gaming", "upcoming"];
+// const category = ["trending", "gaming", "upcoming"];
 // const ram = ["4GB", "6GB", "8GB", "12GB", "16GB"];
 
 const Search = () => {
@@ -20,7 +20,7 @@ const Search = () => {
   const [keyword, setKeyword] = useState("");
   const [price, setPrice] = useState([10000, 250000]);
   const [searchKeyword, setSearchKeyword] = useState("");
-  const [categoryItem, setCategoryItem] = useState("");
+  // const [categoryItem, setCategoryItem] = useState("");
 
   const searchHandler = (e) => {
     setKeyword(e.target.value);
@@ -40,12 +40,12 @@ const Search = () => {
 
   useEffect(() => {
     // dispatch(getAllPhones());
-    dispatch(getPhones(searchKeyword, price, categoryItem));
+    dispatch(getPhones(searchKeyword, price));
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-  }, [dispatch, alert, error, searchKeyword, price, categoryItem]);
+  }, [dispatch, alert, error, searchKeyword, price]);
 
   if (isLoading) {
     <Loader />;
@@ -89,7 +89,7 @@ const Search = () => {
               max={250000}
             />
           </div>
-          <div className="category-item">
+          {/* <div className="category-item">
             <Typography>Category</Typography>
             <ul>
               {category.map((elem, index) => (
@@ -98,7 +98,7 @@ const Search = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="container">
