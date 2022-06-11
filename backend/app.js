@@ -1,4 +1,4 @@
-// const dotenv = require("dotenv").config({});
+const dotenv = require("dotenv").config({});
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
@@ -33,7 +33,12 @@ app.use(fileUpload());
 // );
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Credentials", " true");
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "http://127.0.0.1:8000/",
+    "https://gadgetinfo.herokuapp.com",
+    "https://res.cloudinary.com/"
+  );
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
